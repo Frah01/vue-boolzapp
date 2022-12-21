@@ -29,28 +29,60 @@
 }
 
 .contatti{
-    width: 500px;
+
     height: 100%;
     background-color: orange;
     margin: 0;
 }
 
 .chat{
-    width: calc(100% - 500px);
+    
     height: 100%;
-    background-color: grey;
+   
 }
+
+/*CLASSI UTILITY*/
+
+
+
+
+
+
 
 /*FINE MAIN STRUTTURA*/
 
 /*INIZIO STRUTTURA CONTATTI*/
 
 .profile{
-    height: 7vh;
+    padding: 5px;
     background-color: rgba(234,234,234,255);
 }
 
 .notify {
-    height: 10vh;
+    padding: 10px;
     background-color: rgba(142,218,252,255);
 }
+
+.searchbar{
+    padding: 5px;
+    background-color: rgba(250,250,250,255);
+
+}
+
+.chats{
+    padding: 10px;
+    background-color: brown;
+}
+
+.profile img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.main-chat{
+    background-image: url(../img/mine.jpg);
+    background-repeat: repeat; 
+    height: calc(100% - 60px);
+}
+
