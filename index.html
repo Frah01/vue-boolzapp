@@ -20,7 +20,7 @@
                                 <div class="d-flex m-0">
                                     <div class="d-flex align-items-center" >
                                         <img src="./img/avatar_1.jpg" alt="">
-                                        <h5 class="m-0 fs-6">Sofia</h5>
+                                        <h5 class="m-0 fs-6"></h5>
                                     </div>
                                 </div>  
                                 <div class="m-0 d-flex align-items-center icons-color" >
@@ -47,9 +47,9 @@
                                   </div>
                             </div>
                             <div class="overflow-auto h-50"  >
-                                <div class="chats d-flex align-items-center border-bottom "v-for="(item, i) in contacts" >
+                                <div class="chats d-flex align-items-center border-bottom " v-for="(item, index) in contacts" @click="changeContact(index)" :class="(activeItem === index ) ? 'background-color-grey' : '' " >
                                     <div class="d-flex align-items-center m-0" >
-                                        <img :src="getAvatar(i)" alt="">
+                                        <img :src="getAvatar(index)" alt="">
                                     </div>
                                     <div class="testo mx-1 d-flex flex-column " >
                                         <p class="m-0">{{item.name}}</p>
@@ -64,11 +64,14 @@
             </div>
                     <div class="col-7" >
                         <div class="chat">
-                            <div class="profile d-flex justify-content-between" >
+                            <div class="profile d-flex justify-content-between" v-for>
                                 <div class="d-flex m-0">
                                     <div class="d-flex align-items-center" >
-                                        <img src="./img/avatar_1.jpg" alt="">
-                                        <h5 class="m-0 fs-6" >Sofia</h5>
+                                        <img :src="getAvatar(activeItem)" alt="">
+                                        <div class="d-flex flex-column justify-content-center" >
+                                        <h5 class="m-0 fs-6" >{{contacts[activeItem].name}}</h5>
+                                        <p class="m-0">Ultimo accesso alle 10:00</p>
+                                        </div>
                                     </div>
                                 </div>  
                                 <div class="m-0 d-flex align-items-center icons-color" >
@@ -84,27 +87,17 @@
                                             <div class="col-12" >
                                                 <div class="texts d-flex mt-5" >
                                                     <div class="message white-text d-flex justify-content-center align-items-center m-0 " >
-                                                        <p class="m-0">ciao</p>
+                                                        <p class="m-0"></p>
                                                     </div>
                                                 </div>
                                             </div>
                                                 <div class="texts d-flex mt-2" >
-                                                    <div class="message green-text d-flex align-items-center m-0"  >
+                                                    <div class="message green-text d-flex align-items-center m-0" v-for="(messaggio,i) in contacts[activeItem].messages"  >
                                                         <div class="message-content" >
-                                                            <p class="m-0"></p>
+                                                            <p class="m-0">{{messaggio.message}}</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="texts d-flex mt-2" >
-                                                    <div class="message green-text d-flex align-items-center m-0  " >
-                                                        <div class="message-content" >
-                                                            <p class="m-0">Hai portato a spasso il cane?</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            
-                                            
-                                            
                                         </div>
                                     </div>
                                 </div>

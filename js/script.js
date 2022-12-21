@@ -171,10 +171,12 @@ createApp({
     },
     methods: {
         getAvatar(i){
-            return "./img/avatar" + this.contacts[i].avatar + ".jpg";}
+            return "./img/avatar" + this.contacts[i].avatar + ".jpg";
+        },
+           
+        changeContact(i){
+                this.activeItem = i
+            }
     },
-    changeContact(index)
-    {
-        this.activeItem = index;
-    },
+        
 }).mount('#app')
