@@ -173,4 +173,8 @@ createApp({
         getAvatar(i){
             return "./img/avatar" + this.contacts[i].avatar + ".jpg";}
     },
+    changeContact(index)
+    {
+        this.activeItem = index;
+    },
 }).mount('#app')

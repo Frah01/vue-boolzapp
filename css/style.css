@@ -29,7 +29,7 @@
 }
 
 .contatti{
-    height: calc(100vh - 30px);
+    height: calc(100vh - 50px);
     margin: 0;
 }
 
@@ -133,14 +133,27 @@
 .message {
     height: 30px;
     border-radius: 10px;
+    width: 30%;
 }
 
 .green-text{
     background-color: rgba(213,249,186,255);
 }
 
+.align-self-end{
+    align-self: flex-end;
+}
+
+.align-self-start{
+    align-self: flex-start;
+}
+
 .white-text{
     background-color: white
 }
 
+.container-messages{
+    width: 80%;
+    margin: 0 auto;
+}
 
