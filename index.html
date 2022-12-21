@@ -46,15 +46,18 @@
                                     <input type="text" placeholder="Cerca o inizia una nuova chat" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                                   </div>
                             </div>
-                            <div class="chats d-flex align-items-center border-bottom" >
-                                <div class="d-flex align-items-center m-0" >
-                                    <img src="./img/avatar_1.jpg" alt="">
-                                </div>
-                                <div class="testo mx-1 d-flex flex-column" >
-                                    <p class="m-0">Marco</p>
-                                    <p class="m-0 icons-color">Ultimo messaggio inviato</p>
+                            <div class="overflow-auto h-50"  >
+                                <div class="chats d-flex align-items-center border-bottom "v-for="(item, i) in contacts" >
+                                    <div class="d-flex align-items-center m-0" >
+                                        <img :src="getAvatar(i)" alt="">
+                                    </div>
+                                    <div class="testo mx-1 d-flex flex-column " >
+                                        <p class="m-0">{{item.name}}</p>
+                                        <p class="m-0 icons-color">Ultimo messaggio inviato</p>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -75,7 +78,36 @@
                                 </div>
                             </div>
                             <div class="main-chat" >
+                                <div class="container" >
+                                    <div class="row" >
+                                        <div class="col-12" >
+                                            <div class="texts mt-5" >
+                                                <div class="message white-text" >
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                            <div class="texts mt-2" >
+                                                <div class="message green-text d-flex align-items-center" >
+                                                    <div class="message-content" >
+                                                        <p class="m-0">Hai portato a spasso il cane?</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="texts mt-2" >
+                                                <div class="message green-text d-flex align-items-center" >
+                                                    <div class="message-content" >
+                                                        <p class="m-0">Hai portato a spasso il cane?</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+                               
                             </div>
                             <div class="type-bar d-flex justify-content-between align-items-center" >
                                 <div class="emoji" ><i class="fa-regular fa-face-smile type-bar-icon-color"></i></div>

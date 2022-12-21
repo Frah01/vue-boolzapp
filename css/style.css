@@ -29,7 +29,7 @@
 }
 
 .contatti{
-    height: 100%;
+    height: calc(100vh - 30px);
     margin: 0;
 }
 
@@ -104,7 +104,7 @@
     border-radius: 50%;
 }
 
-.chats, .notify p, a{
+ .message, .chats, .notify p, a{
     font-size: 10px;
 }
 
@@ -121,6 +121,26 @@
 .type-bar{
     padding: 5px;
     background-color: rgba(234,234,234,255);;
+}
+
+.chat-container{
+    width: 80%;
+    background-color: whitesmoke;
+    height: 200px;
+    
+}
+
+.message {
+    height: 30px;
+    border-radius: 10px;
+}
+
+.green-text{
+    background-color: rgba(213,249,186,255);
+}
+
+.white-text{
+    background-color: white
 }
 
 
