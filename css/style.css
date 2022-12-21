@@ -119,11 +119,11 @@
 .main-chat{
     background-image: url(../img/mine.jpg);
     background-repeat: repeat; 
-    height: calc(100% - 88px);
+    height: calc(100% - 89px);
 }
 
 .type-bar{
-    padding: 5px;
+    height: 45px;
     background-color: rgba(234,234,234,255);;
 }
 
