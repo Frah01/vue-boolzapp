@@ -29,9 +29,7 @@
 }
 
 .contatti{
-
     height: 100%;
-    background-color: orange;
     margin: 0;
 }
 
@@ -47,9 +45,7 @@
     outline: 1px solid rgb(177, 177, 177);
 }
 
-.notify p, a{
-    font-size: 10px;
-}
+
 
 .icons-color {
     color: rgba(182,182,182,255);
@@ -98,15 +94,19 @@
 
 .chats{
     padding: 10px;
-    background-color: brown;
 }
 
-.profile img {
+
+
+.profile img, .chats img {
     height: 30px;
     width: 30px;
     border-radius: 50%;
 }
 
+.chats, .notify p, a{
+    font-size: 10px;
+}
 
 
 /*INIZIO STRUTTURA MAIN CHAT*/
