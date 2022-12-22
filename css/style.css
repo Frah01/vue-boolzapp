@@ -121,11 +121,19 @@
     padding: 10px;
 }
 
+.chats:hover {
+    background-color: rgb(236, 236, 236);
+}
+
+.fa-solid {
+    cursor: pointer;
+}
+
 
 
 .profile img, .chats img {
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
 }
 
@@ -140,7 +148,7 @@
 .main-chat{
     background-image: url(../img/mine.jpg);
     background-repeat: repeat; 
-    height: calc(100% - 89px);
+    height: calc(100% - 105px);
 }
 
 .type-bar{
