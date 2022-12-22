@@ -182,7 +182,6 @@ createApp({
             else{
                 contactFilter = this.contacts
             }
-            console.log(contactFilter)
             return contactFilter
             
         }
