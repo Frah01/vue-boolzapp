@@ -91,7 +91,7 @@
                                     <div class="container" >
                                         <div class="row" >
                                             <div class="col-12" >
-                                                <div class="texts d-flex mt-5" v-for="(messaggio,i) in contacts[activeItem].messages":class="(messaggio.status == 'sent') ? 'sent' : 'received'">
+                                                <div class="texts d-flex my-2" v-for="(messaggio,i) in contacts[activeItem].messages":class="(messaggio.status == 'sent') ? 'sent' : 'received'">
                                                     <div class="message  m-0 " >
                                                         <p class="m-0">{{messaggio.message}}</p>
                                                         <div class=" date d-flex justify-content-end">
