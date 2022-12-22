@@ -182,10 +182,14 @@ createApp({
             },
             addMessage(){
                     let date = new Date
+                    let currentdate =
+                    + date.getHours() + ":"  
+                    + date.getMinutes() + ":" 
+                    + date.getSeconds();
                     let object = {
                         message: this.newMessage,
                         status :'sent' ,
-                        date: date,
+                        date: currentdate,
                     }
                     this.contacts[this.activeItem].messages.push(object);
                     this.newMessage = '';
@@ -193,11 +197,11 @@ createApp({
                         let botObject = {
                             message: this.botMessage,
                             status :'received' ,
-                            date: date,
+                            date: currentdate,
                         }
                         this.contacts[this.activeItem].messages.push(botObject);
                         this.botMessage = 'Ok';
-                    }, 1000)
+                    }, 2000)
                 },
                 searchContacts(){
                     let searchProfile = this.search.toLowerCase()
