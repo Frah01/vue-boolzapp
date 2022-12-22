@@ -81,11 +81,17 @@
 }
 
 .sent .message{
-    background-color: rgba(213,249,186,255)
+    background-color: rgba(213,249,186,255);
+    border-radius: 10px 0px 10px 10px;
 }
 
 .received .message{
     background-color: #fff;
+    border-radius: 0px 10px 10px 10px;
+}
+
+.margin-right-0{
+    margin-right: 0;
 }
 
 
@@ -137,7 +143,7 @@
     border-radius: 50%;
 }
 
- .profile, .message, .chats, .notify p, a{
+ .profile, .message, .notify p, a{
     font-size: 10px;
 }
 
@@ -174,7 +180,7 @@
 } 
 
 .message{
-    border-radius: 10px;
+    border-radius: 10px 0px 10px 10px;
 }
 
 .green-text{
