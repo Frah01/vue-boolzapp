@@ -73,10 +73,19 @@
 
 .sent {
     justify-content: flex-end;
+    
 }
 
 .recieved{
     justify-content: flex-start;
+}
+
+.sent .message{
+    background-color: rgba(213,249,186,255)
+}
+
+.received .message{
+    background-color: #fff;
 }
 
 
@@ -146,10 +155,13 @@
     
 }
 
-.message {
-    height: 30px;
+.message p {
+  padding: 10px;
+  
+}
+
+.message{
     border-radius: 10px;
-    width: 30%;
 }
 
 .green-text{
