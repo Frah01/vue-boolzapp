@@ -5,6 +5,7 @@ createApp({
         return{
             activeItem: 0,
             newMessage: '',
+            botMessage : 'Ok',
             search : '',
             contacts: [
                 {
@@ -171,21 +172,6 @@ createApp({
             ],          
         }
     },
-    computed : {
-        searchContacts(){
-            let contactFilter;
-            if(this.search != ''){
-                contactFilter = this.contacts.filter((elem) => {
-                    return elem.name.toLowerCase().includes(this.search.toLowerCase())
-                })
-            }
-            else{
-                contactFilter = this.contacts
-            }
-            return contactFilter
-            
-        }
-    },
     methods: {
         getAvatar(i){
             return "./img/avatar" + this.contacts[i].avatar + ".jpg";
@@ -195,14 +181,36 @@ createApp({
                 this.activeItem = i
             },
             addMessage(){
+                    let date = new Date
                     let object = {
                         message: this.newMessage,
                         status :'sent' ,
+                        date: date,
                     }
-                    this.contacts.push(object);
+                    this.contacts[this.activeItem].messages.push(object);
                     this.newMessage = '';
+                    setTimeout(() => {
+                        let botObject = {
+                            message: this.botMessage,
+                            status :'received' ,
+                            date: date,
+                        }
+                        this.contacts[this.activeItem].messages.push(botObject);
+                        this.botMessage = 'Ok';
+                    }, 1000)
                 },
-
+                searchContacts(){
+                    let searchProfile = this.search.toLowerCase()
+                    console.log(searchProfile)
+                    for(let i = 0; i < this.contacts.length; i++){
+                     if(this.contacts[i].name.toLowerCase().includes(searchProfile)){
+                         this.contacts[i].visible = true
+                     }
+                     else if (!(this.contacts[i].name.toLowerCase().includes(searchProfile))){
+                         this.contacts[i].visible = false
+                     }
+                    }
+                 }
     },
         
 }).mount('#app')
