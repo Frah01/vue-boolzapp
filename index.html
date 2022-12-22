@@ -15,7 +15,10 @@
             <div class="container" >
                 <div class="row" >
                     <div class="col-12 p-0" >
+                        <!-- INIZIO COLONNA SINISTRA CONTATTI -->
                         <div class="contatti" >
+
+                            <!-- BARRA PROFILO UTENTE -->
                             <div class="profile border-end  d-flex justify-content-between" >
                                 <div class="d-flex m-0">
                                     <div class="d-flex align-items-center" >
@@ -29,6 +32,7 @@
                                     <i class="fa-solid fa-ellipsis-vertical fa-2x px-2"></i>
                                 </div>
                             </div>
+                            <!-- BANNER NOTIFICHE -->
                             <div class="notify" >
                                 <div class="notify-content d-flex align-items-center">
                                     <div class="icona m-0" >
@@ -40,13 +44,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- SEARCH BAR CHATS -->
                             <div class="searchbar" >
                                 <div class="input-group input-group-sm ">
                                     <span class="input-group-text type-bar-icon-color border-0" id="inputGroup-sizing-sm"><i class="fa-solid fa-magnifying-glass"></i></span>
                                     <input @keyup="searchContacts()"  type="text" placeholder="Cerca o inizia una nuova chat" class="form-control border-0" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  v-model="search">
                                   </div>
                             </div>
+                            <!-- CONTAINER CHATS -->
                             <div class="overflow-auto h-50"  >
+                                <!-- CICLO V-FOR CHATS -->
                                 <div  v-for="(item, index) in contacts" >
                                     <div v-if="item.visible" class="chats d-flex align-items-center border-bottom "  @click="changeContact(index)" :class="(activeItem === index ) ? 'background-color-grey' : '' " >
                                         <div class="d-flex align-items-center m-0" >
@@ -69,8 +76,10 @@
                 </div>
             </div>
                     <div class="col-7" >
+                        <!-- INIZIO COLONNA DESTRA CHAT -->
                         <div class="chat">
-                            <div class="profile d-flex justify-content-between" v-for>
+                            <!-- TOPBAR CHAT -->
+                            <div class="profile d-flex justify-content-between">
                                 <div class="d-flex m-0">
                                     <div class="d-flex align-items-center" >
                                         <img :src="getAvatar(activeItem)" alt="">
@@ -86,27 +95,27 @@
                                     <i class="fa-solid fa-ellipsis-vertical fa-2x px-2"></i>
                                 </div>
                             </div>
+                            <!-- STRUTTURA CHAT -->
                             <div class="main-chat overflow-auto" >
                                 <div class="container-messages" >
                                     <div class="container" >
                                         <div class="row" >
                                             <div class="col-12" >
+                                                <!-- CICLO VFOR PER I MESSAGGI DELLE CHAT -->
                                                 <div class="texts d-flex my-2" v-for="(messaggio,i) in contacts[activeItem].messages":class="(messaggio.status == 'sent') ? 'sent' : 'received'">
                                                     <div class="message box-shadow  m-0 " >
                                                         <p class="m-0">{{messaggio.message}}</p>
                                                         <div class=" date d-flex justify-content-end">
                                                             <p class="m-0 p-1 icons-color">{{messaggio.date}}</p>
                                                         </div>
-                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
-                               
                             </div>
+                            <!-- TYPE-BAR -->
                             <div class="type-bar d-flex justify-content-between align-items-center" >
                                 <div class="emoji" ><i class="fa-regular fa-face-smile type-bar-icon-color"></i></div>
                                 <div class="type-input-bar m-0 w-75 " >
