@@ -4,6 +4,8 @@ createApp({
     data(){
         return{
             activeItem: 0,
+            newMessage: '',
+            search : '',
             contacts: [
                 {
                 name: 'Michele',
@@ -164,9 +166,25 @@ createApp({
                 message: 'OK!!',
                 status: 'received'
                 }
-                ],
+                ]
                 }
-            ]                
+            ],          
+        }
+    },
+    computed : {
+        searchContacts(){
+            let contactFilter;
+            if(this.search != ''){
+                contactFilter = this.contacts.filter((elem) => {
+                    return elem.name.toLowerCase().includes(this.search.toLowerCase())
+                })
+            }
+            else{
+                contactFilter = this.contacts
+            }
+            console.log(contactFilter)
+            return contactFilter
+            
         }
     },
     methods: {
@@ -176,7 +194,16 @@ createApp({
            
         changeContact(i){
                 this.activeItem = i
-            }
+            },
+            addMessage(){
+                    let object = {
+                        message: this.newMessage,
+                        status :'sent' ,
+                    }
+                    this.contacts.push(object);
+                    this.newMessage = '';
+                },
+
     },
         
 }).mount('#app')

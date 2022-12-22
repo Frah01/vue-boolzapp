@@ -43,11 +43,11 @@
                             <div class="searchbar" >
                                 <div class="input-group input-group-sm ">
                                     <span class="input-group-text type-bar-icon-color" id="inputGroup-sizing-sm"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"  v-model="search">
                                   </div>
                             </div>
                             <div class="overflow-auto h-50"  >
-                                <div class="chats d-flex align-items-center border-bottom " v-for="(item, index) in contacts" @click="changeContact(index)" :class="(activeItem === index ) ? 'background-color-grey' : '' " >
+                                <div class="chats d-flex align-items-center border-bottom " v-for="(item, index) in searchContacts" @click="changeContact(index)" :class="(activeItem === index ) ? 'background-color-grey' : '' " >
                                     <div class="d-flex align-items-center m-0" >
                                         <img :src="getAvatar(index)" alt="">
                                     </div>
@@ -100,7 +100,7 @@
                             <div class="type-bar d-flex justify-content-between align-items-center" >
                                 <div class="emoji" ><i class="fa-regular fa-face-smile type-bar-icon-color"></i></div>
                                 <div class="type-input-bar m-0 w-75 " >
-                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                                    <input type="text" class="form-control" placeholder="Scrivi un messaggio" @keyup.enter="addMessage()" v-model="newMessage"  >
                                 </div>
                                 <div class="voice-message" >
                                     <i class="fa-solid fa-microphone type-bar-icon-color"></i>
