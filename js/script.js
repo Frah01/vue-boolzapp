@@ -214,7 +214,12 @@ createApp({
                          this.contacts[i].visible = false
                      }
                     }
-                 }
+                 },
+                removeMessage(){
+                    for(let i = 0; i < this.contacts[this.activeItem].messages.length; i++){
+                        this.contacts[this.activeItem].messages.splice(i,1);
+                    }
+                }
     },
         
 }).mount('#app')
