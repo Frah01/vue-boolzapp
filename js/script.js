@@ -217,7 +217,8 @@ createApp({
                  },
                 removeMessage(){
                     for(let i = 0; i < this.contacts[this.activeItem].messages.length; i++){
-                        this.contacts[this.activeItem].messages.splice(i,1);
+                        this.contacts[this.activeItem].messages.splice(0,1);
+                        console.log(i)
                     }
                 }
     },
